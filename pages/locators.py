@@ -21,4 +21,11 @@ class BasePageLocators():
     BASKET_LINK = (By.CSS_SELECTOR, "span.btn-group>a.btn.btn-default")
     EMPTY_MESSAGE = (By.CSS_SELECTOR, "#content_inner>p")
     BASKET_GOODS = (By.CSS_SELECTOR, "div.basket-items")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+class RegisterPageLocators():
+    EMAIL_FIELD = (By.CSS_SELECTOR, "[name='registration-email']")
+    PASSWORD_FIELD = (By.CSS_SELECTOR, '[name="registration-password1"]')
+    REPEAT_PASSWORD = (By.CSS_SELECTOR, '[name="registration-password2"]')
+    REGISTER_BUTTON = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
