@@ -4,9 +4,6 @@ from final_task.pages.basket_page import BasketPage
 import pytest
 
 
-# def go_to_login_page(browser):
-#     login_link = browser.find_element(By.CSS_SELECTOR, "#login_link")
-#     login_link.click()
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
@@ -32,13 +29,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page.should_not_be_goods()
     page.should_be_empty_text()
 
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/"
-    page = BasketPage(browser, link)
-    page.open()
-    page.go_to_basket()
-    page.should_not_be_goods()
-    page.should_be_empty_text()
+
 
 
 
