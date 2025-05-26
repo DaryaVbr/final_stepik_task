@@ -5,7 +5,7 @@ from final_task.pages.basket_page import BasketPage
 import pytest
 import time
 
-# чтобы  запустить тест нужно раскомментить строку в product_page в методе add_to_cart
+# чтобы  запустить тест нужно раскомменти параметризацию и строку в product_page в методе add_to_cart
 # @pytest.mark.parametrize('link_site', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
 #                                        "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
 #                                        "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
@@ -16,13 +16,14 @@ import time
 #                                        pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail),
 #                                        "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
 #                                        "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
-# @pytest.mark.need_review
-# def test_guest_can_add_product_to_basket(browser, link_site):
-#     link = link_site
-#     product_page = ProductPage(browser, link)
-#     product_page.open()
-#     product_page.add_to_cart()
-#     product_page.should_be_cost_of_book_in_cart()
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(browser):
+    # link = link_site
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.add_to_cart()
+    product_page.should_be_cost_of_book_in_cart()
 
 @pytest.mark.xfail(reason="fixing this bug right now")
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
